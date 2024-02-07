@@ -10,9 +10,11 @@ import java.util.List;
 @Repository
 public class ProductRepository {
     private List<Product> productData = new ArrayList<>();
+    private int countId = 0;
 
     public Product create(Product product) {
-        product.setProductId(Integer.toString(productData.size()+1));
+        countId += 1;
+        product.setProductId(Integer.toString(countId));
         productData.add(product);
         return product;
     }
@@ -36,5 +38,11 @@ public class ProductRepository {
 
     public  Iterator<Product> findAll() {
         return productData.iterator();
+    }
+
+    public Product delete(String productId) {
+        Product tempProduct = findProduct(productId);
+        productData.remove(tempProduct);
+        return tempProduct;
     }
 }
