@@ -12,8 +12,26 @@ public class ProductRepository {
     private List<Product> productData = new ArrayList<>();
 
     public Product create(Product product) {
+        product.setProductId(Integer.toString(productData.size()+1));
         productData.add(product);
         return product;
+    }
+
+    public Product findProduct(String productId){
+        for (Product product: productData) {
+            if (product.getProductId().equals(productId)){
+                return product;
+            }
+        }
+        return null;
+    }
+
+    public Product edit(Product editProduct) {
+        Product tempProduct = findProduct(editProduct.getProductId());
+        System.out.println(tempProduct.getProductName());
+        tempProduct.setProductName(editProduct.getProductName());
+        tempProduct.setProductQuantity(editProduct.getProductQuantity());
+        return tempProduct;
     }
 
     public  Iterator<Product> findAll() {
