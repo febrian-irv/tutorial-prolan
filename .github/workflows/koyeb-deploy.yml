@@ -1,0 +1,21 @@
+name: Deploy to Koyeb
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Deploy to Koyeb
+        run: |
+          koyeb login --token ${{ secrets.KOYEB_API_TOKEN }}
+          koyeb stack deploy -f .koyeb/koyeb.yaml
+        env:
+          KOYEB_API_TOKEN: ${{ secrets.KOYEB_API_TOKEN }}
