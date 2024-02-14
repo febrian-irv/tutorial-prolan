@@ -16,6 +16,5 @@ jobs:
       - name: Deploy to Koyeb
         run: |
           koyeb login --token ${{ secrets.KOYEB_API_TOKEN }}
-          koyeb stack deploy -f .koyeb/koyeb.yaml
         env:
           KOYEB_API_TOKEN: ${{ secrets.KOYEB_API_TOKEN }}
