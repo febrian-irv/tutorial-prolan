@@ -34,3 +34,24 @@ prinsip clean code yang telah saya terapkan:
 2. Sudah walaupun implementasi yang saya lakukan sendiri masih ada kekurangan. Proses CI sendiri adalah proses automasi dalam melakukan build serta testing pada program yang telah diupdate dan proses CD adalah proses delivery secara terus-menerus setiap ada update pada program. Oleh karena itu, workflows yang saya kerjakan telah memenuhi kedua hal tersebut. Untuk CI, terlihat adanya workflow ci dan scorecard yang melakukan testing pada program untuk memastikan kelancaran program. Untuk CD, terlihat adanya workflow koyeb-deploy yang dijalankan setiap update pada program.
 
 </details>
+
+## Module 2
+<details>
+<summary>Click for more detail</summary>
+<br>
+
+1. Explain what principles you apply to your project!
+- Single Responsibility Principle
+Menurut principle ini, setiap classs diharuskan untuk hanya memiliki satu tanggung jawab sehingga dalam satu class tidak boleh terdapat fungsi yang berhubungan dengan keperluan pada class lain. Contohnya yangterjadi adalah class Car yang terletak pada class Product sehingga dilakukan pemisahan class. Dengan cara ini akan meningkatkan clarity dari kode serta pengaksesan fungsi pada class tersebut lebih jelas dan mudah untuk di maintain.
+- Interface Segregation Principle
+Menurut principle ini, dalam membuat interface harus lebih dispesifikan terhadap class yang harus digunakan. Oleh karena itu, pada projek ini diimplementasikan pemisahan carService dan productService. Dengan pengimplentasian tersebut, maka setiap class dari interface akan digunakan dan menghindari adanya fungsi yang nganggur ataupun fungsi yang tidak perlu pengimplementsiannya.
+- Open-Closed Principle
+Menurut Principle ini, suatu class sebaiknya bisa di extend tanpa melakukan modifikasi pada class tersebut. Oleh karena itu, dilakukan pengubahan dalam ekstensi untuk tidak menggunakan class implementation dalam mengextend melainkan menggunakan interface yang sudah sediakan agar tidak terjadi modifikasi.
+
+2. Explain the advantages of applying SOLID principles to your project with examples.
+- Dengan menggunakan SRP maka code akan lebih maintainable. Selain itu, dengan pemisahan class memudahkan untuk memisahkan kepentingan sehingga tidak mempengaruhi class lain.
+- Dengan menggunakan ISP maka pengguna hanya melihat hasil implementasi dari fungsi yang diperlukan saja, contohnya jika suatu class terdapat kemiripan tetapi terdapat implementasi yang berbeda.
+- Dengan OCP maka akan menghindari perubahan pada code yang rentan menyebabkan error.
+
+3. 3) Explain the disadvantages of not applying SOLID principles to your project with examples.
+</details>
