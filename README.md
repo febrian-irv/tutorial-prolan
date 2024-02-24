@@ -35,7 +35,7 @@ prinsip clean code yang telah saya terapkan:
 
 </details>
 
-## Module 2
+## Module 3
 <details>
 <summary>Click for more detail</summary>
 <br>
@@ -53,5 +53,6 @@ Menurut Principle ini, suatu class sebaiknya bisa di extend tanpa melakukan modi
 - Dengan menggunakan ISP maka pengguna hanya melihat hasil implementasi dari fungsi yang diperlukan saja, contohnya jika suatu class terdapat kemiripan tetapi terdapat implementasi yang berbeda.
 - Dengan OCP maka akan menghindari perubahan pada code yang rentan menyebabkan error.
 
-3. 3) Explain the disadvantages of not applying SOLID principles to your project with examples.
+3. Explain the disadvantages of not applying SOLID principles to your project with examples.
+Dengan tidak menerapkan SOLID akan pada projek ini akan menyulitkan  dalam memaintain code dan mendebug. Contohnya adalah jika class CarController berada di dalam ProductController maka beban untuk memeriksa kebenaran kode lebih besar karena memeriksa 2 hal sekaligus. Namun, dengan adanya pemisahan maka ada seperation of concern. Lalu contoh untuk ISP adalah dengan tidak merapkan ini kita berkemungkinan untuk tetap menjalankan fungsi/method yang tidak diperlukan pada kelas tersebut sehingga code menjadi tidak efektif. Untuk OCP, jika tidak dilakukan maka ada kemungkinan tidak sengaja memodifikasi yang memperbersar kemungkinan adanya bug.
 </details>
