@@ -12,19 +12,8 @@ public class Order {
     List<Product> products;
     Long orderTime;
     String author;
-    Status status;
-    public enum Status {
-        WAITING_PAYMENT("WAITING_PAYMENT"),
-        FAILED("FAILED"),
-        CANCELLED("CANCELLED"),
-        SUCCESS("SUCCESS");
-
-        public final String label;
-
-        Status(String label) {
-            this.label = label;
-        }
-    }
+    @Setter
+    String status;
 
     Order (String id, List<Product> products, Long orderTime, String author) {
     }
