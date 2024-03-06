@@ -16,7 +16,7 @@ public class Order {
     String author;
     String status;
 
-    Order (String id, List<Product> products, Long orderTime, String author) {
+    public Order (String id, List<Product> products, Long orderTime, String author) {
         this.id = id;
         this.orderTime = orderTime;
         this.author = author;
@@ -29,7 +29,7 @@ public class Order {
         }
     }
 
-    Order (String id, List<Product> products, Long orderTime, String author, String status) {
+    public Order (String id, List<Product> products, Long orderTime, String author, String status) {
         this(id, products, orderTime, author);
         this.setStatus(status);
     }
