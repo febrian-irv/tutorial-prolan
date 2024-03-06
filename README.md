@@ -56,3 +56,15 @@ Menurut Principle ini, suatu class sebaiknya bisa di extend tanpa melakukan modi
 3. Explain the disadvantages of not applying SOLID principles to your project with examples.
 Dengan tidak menerapkan SOLID akan pada projek ini akan menyulitkan  dalam memaintain code dan mendebug. Contohnya adalah jika class CarController berada di dalam ProductController maka beban untuk memeriksa kebenaran kode lebih besar karena memeriksa 2 hal sekaligus. Namun, dengan adanya pemisahan maka ada seperation of concern. Lalu contoh untuk ISP adalah dengan tidak merapkan ini kita berkemungkinan untuk tetap menjalankan fungsi/method yang tidak diperlukan pada kelas tersebut sehingga code menjadi tidak efektif. Untuk OCP, jika tidak dilakukan maka ada kemungkinan tidak sengaja memodifikasi yang memperbersar kemungkinan adanya bug.
 </details>
+
+## Module 4
+<details>
+<summary>Click for more detail</summary>
+<br>
+
+1. Reflect based on Percival (2017) proposed self-reflective questions (in “Principles and Best Practice of Testing” submodule, chapter “Evaluating Your Testing Objectives”), whether this TDD flow is useful enough for you or not. If not, explain things that you need to do next time you make more tests.
+Saya merasa dengan menggunakan TDD saya lebih dapat menghasilkan kode yang lebih bersih. Hal ini karena dengan TDD saya bisa merencanakan dengan lebih baik bagaimana saya akan mengimplementasikan sebuah method. Dengan cara tersebut, bug akan lebih cepat juga untuk ditemukan. Dengan TDD saya juga lebih bisa memisahkan apa yang harus direfactor pada kode saya.
+2. You have created unit tests in Tutorial. Now reflect whether your tests have successfully followed F.I.R.S.T. principle or not. If not, explain things that you need to do the next time you create more tests.
+Iya, berhasil sesuai FIRST. karena pada test bersifat isolated dengan adanya setUp. Fast karena pemisahan unit test dengan functional test. Repeatable karena adanya setUp yang dilakukan before each test. Self validating karena adanya assertion yang strict. Thorough karena mengcover semua happy dan unhappy path.
+
+</details>
