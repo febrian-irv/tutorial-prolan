@@ -104,7 +104,7 @@ class OrderServiceImplTest {
     @Test
     void testFindByIdIfIdFound() {
         Order order = orders.get(1);
-        doReturn(order).when(orderRepository).findById("zczc");
+        doReturn(order).when(orderRepository).findById(order.getId());
 
         Order result = orderService.findById(order.getId());
         assertEquals(order.getId(), result.getId());
