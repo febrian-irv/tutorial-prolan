@@ -2,6 +2,7 @@ package id.ac.ui.cs.advprog.eshop.service;
 
 import id.ac.ui.cs.advprog.eshop.enums.OrderStatus;
 import id.ac.ui.cs.advprog.eshop.model.Product;
+import id.ac.ui.cs.advprog.eshop.repository.OrderRepository;
 import id.ac.ui.cs.advprog.eshop.repository.OrderRepositoryTest;
 import id.ac.ui.cs.advprog.eshop.model.Order;
 import org.junit.jupiter.api.BeforeEach;
@@ -19,11 +20,11 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-public class OrderServiceImplTest {
+class OrderServiceImplTest {
     @InjectMocks
     OrderServiceImpl orderService;
     @Mock
-    OrderRepositoryTest orderRepository;
+    OrderRepository orderRepository;
     List<Order> orders;
 
     @BeforeEach
@@ -42,6 +43,17 @@ public class OrderServiceImplTest {
         Order order2 = new Order("7f9e15bb-4b15-42f4-aebc-c3af385fb078",
                 products,1708570000L, "Safira Sudrajat");
         orders.add(order2);
+    }
+
+    @Test
+    void testCreateOrder() {
+        Order order = orders.get(1);
+        doReturn(order).when(orderRepository).save(order);
+
+        Order result = orderService.createOrder(order);
+        verify(orderRepository, times(1)).save(order);
+        assertEquals(order.getId(), result.getId());
+
     }
 
     @Test
